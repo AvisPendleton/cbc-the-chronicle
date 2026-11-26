@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CBC The Chronicle — a student publication for stories, perspectives and ideas.">
+  <title>CBC The Chronicle | Student Newspaper</title>
+  <style>
+    :root {
+      --paper: #f7f6f2;
+      --white: #fffefa;
+      --ink: #242722;
+      --muted: #686b63;
+      --line: #d9d8d0;
+      --accent: #344b43;
+      --accent-soft: #e8ede8;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.65; }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+    .topline { border-bottom: 1px solid var(--line); color: var(--muted); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; }
+    .topline .wrap { display:flex; justify-content:space-between; padding: 12px 0; gap: 16px; }
+    header { padding: 34px 0 22px; }
+    .masthead { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; }
+    h1 { font: 700 clamp(2.7rem, 7vw, 5.5rem)/.98 var(--serif); letter-spacing:-.055em; margin: 0; }
+    .tagline { font: italic 1.15rem var(--serif); color:var(--muted); margin: 12px 0 0; }
+    .edition { text-align:right; color:var(--muted); font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; white-space:nowrap; }
+    nav { border-top:1px solid var(--ink); border-bottom:1px solid var(--line); }
+    nav .wrap { display:flex; flex-wrap:wrap; gap: 8px 25px; padding:13px 0; }
+    nav a { text-decoration:none; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:#41453f; }
+    nav a:hover { color:var(--accent); text-decoration:underline; text-underline-offset:4px; }
+    .hero { padding: 66px 0 58px; border-bottom:1px solid var(--line); }
+    .eyebrow { color:var(--accent); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+    h2 { font: 500 clamp(2.2rem, 5vw, 4rem)/1.08 var(--serif); letter-spacing:-.035em; margin: 13px 0 16px; max-width:760px; }
+    .hero p { max-width:650px; color:var(--muted); font-size:1.03rem; margin:0; }
+    .hero-actions { margin-top:26px; display:flex; flex-wrap:wrap; gap:12px; }
+    .button { display:inline-block; padding:12px 18px; border:1px solid var(--accent); background:var(--accent); color:white; text-decoration:none; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .button.secondary { background:transparent; color:var(--accent); }
+    section { padding:55px 0; border-bottom:1px solid var(--line); }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:25px; }
+    .section-head h3 { font:500 2rem var(--serif); margin:5px 0 0; }
+    .section-head p { max-width:400px; color:var(--muted); font-size:.88rem; margin:0; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+    .desk { background:var(--white); border:1px solid var(--line); padding:24px; min-height:210px; }
+    .desk .number { color:var(--accent); font-size:.72rem; letter-spacing:.15em; font-weight:700; }
+    .desk h4 { font:500 1.55rem var(--serif); margin:9px 0; }
+    .desk p { color:var(--muted); font-size:.9rem; margin:0 0 12px; }
+    .desk ul { margin:0; padding-left:18px; color:#484c45; font-size:.85rem; }
+    .note { margin-top:18px; padding:16px 18px; background:var(--accent-soft); color:#3f5148; font-size:.86rem; }
+    .submission { background:var(--white); border:1px solid var(--line); padding:clamp(20px,4vw,38px); }
+    .form-intro { max-width:700px; color:var(--muted); margin-top:-5px; }
+    form { margin-top:25px; }
+    .fields { display:grid; grid-template-columns:1fr 1fr; gap:17px; }
+    label { display:block; font-size:.78rem; font-weight:700; letter-spacing:.04em; margin-bottom:7px; }
+    input, select, textarea { width:100%; border:1px solid #c9c9c0; background:#fff; border-radius:0; padding:12px 13px; color:var(--ink); font: .95rem var(--sans); }
+    input:focus, select:focus, textarea:focus { outline:2px solid #8da397; outline-offset:1px; }
+    textarea { min-height:190px; resize:vertical; }
+    .field { margin-bottom:17px; }
+    .hint { color:var(--muted); font-size:.75rem; margin-top:5px; }
+    .checkline { display:flex; align-items:flex-start; gap:10px; margin:20px 0; color:var(--muted); font-size:.8rem; }
+    .checkline input { width:auto; margin-top:5px; }
+    button { border:0; cursor:pointer; }
+    .privacy { color:var(--muted); font-size:.78rem; margin-top:18px; max-width:750px; }
+    footer { padding:26px 0 40px; color:var(--muted); font-size:.75rem; }
+    footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    @media (max-width:700px) {
+      .masthead { display:block; }
+      .edition { text-align:left; margin-top:18px; }
+      .grid, .fields { grid-template-columns:1fr; }
+      .section-head { display:block; }
+      .section-head p { margin-top:10px; }
+      .hero { padding:48px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"><div class="wrap"><span>The Student Newspaper</span><span>Stories · Perspectives · Ideas</span></div></div>
+  <header class="wrap">
+    <div class="masthead">
+      <div>
+        <h1>CBC The Chronicle</h1>
+        <p class="tagline">Stories, perspectives &amp; ideas.</p>
+      </div>
+      <div class="edition">Student-led publication<br>Est. 2026</div>
+    </div>
+  </header>
+  <nav aria-label="Main navigation"><div class="wrap">
+    <a href="#campus">Campus News</a>
+    <a href="#voices">Student Voices</a>
+    <a href="#arts">Arts &amp; Cultures</a>
+    <a href="#academics">Academics &amp; Ideas</a>
+    <a href="#opinions">Opinions &amp; Editorials</a>
+    <a href="#submit">Submit</a>
+  </div></nav>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">A publication by and for students</div>
+        <h2>Every story deserves<br>to be heard.</h2>
+        <p>You don't have to be a reporter to contribute. Share a story, an experience, an idea, or an article worth reading. Help us document the people, conversations and ideas that shape our community.</p>
+        <div class="hero-actions">
+          <a class="button" href="#submit">Contribute to The Chronicle</a>
+          <a class="button secondary" href="#sections">Explore the sections</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sections">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">The newspaper</div><h3>Five ways to contribute</h3></div>
+          <p>Send us original work, news tips, personal perspectives, creative pieces, or links to worthwhile reading.</p>
+        </div>
+        <div class="grid">
+          <article class="desk" id="campus">
+            <div class="number">01 / CAMPUS</div><h4>Campus News</h4>
+            <p>News and developments affecting our school and campus community.</p>
+            <ul><li>School announcements and policy changes</li><li>Campus events, clubs and student activities</li><li>Facilities, services and student resources</li><li>Student achievements and community initiatives</li></ul>
+          </article>
+          <article class="desk" id="voices">
+            <div class="number">02 / COMMUNITY</div><h4>Student Voices</h4>
+            <p>Personal experiences and perspectives from students and the wider school community.</p>
+            <ul><li>Personal stories and student experiences</li><li>Interviews with students and staff</li><li>Student life, challenges and opportunities</li><li>Cultural backgrounds and school life</li></ul>
+          </article>
+          <article class="desk" id="arts">
+            <div class="number">03 / CULTURE</div><h4>Arts &amp; Cultures</h4>
+            <p>Creative work, cultural events, and thoughtful engagement with art and culture.</p>
+            <ul><li>Book, film, music and performance reviews</li><li>Exhibitions and cultural events</li><li>Creative writing, photography and visual art</li><li>Cultural traditions and intercultural experiences</li></ul>
+          </article>
+          <article class="desk" id="academics">
+            <div class="number">04 / KNOWLEDGE</div><h4>Academics &amp; Ideas</h4>
+            <p>A place for curiosity, research, learning and interesting discoveries.</p>
+            <ul><li>Student research and academic projects</li><li>Science, history, sociology and philosophy</li><li>Essays and educational resources</li><li>External articles, reports and research links</li></ul>
+          </article>
+          <article class="desk" id="opinions">
+            <div class="number">05 / COMMENTARY</div><h4>Opinions &amp; Editorials</h4>
+            <p>Arguments, commentary and considered responses to issues that matter.</p>
+            <ul><li>Opinion pieces and critical commentary</li><li>Perspectives on current issues</li><li>Education and school-policy debates</li><li>Responses to previously published work</li></ul>
+          </article>
+        </div>
+        <div class="note"><strong>Sharing something you found online?</strong> Use Academics &amp; Ideas, include the original link, and briefly explain why you think it is worth sharing. Please credit the original author and publisher.</div>
+      </div>
+    </section>
+
+    <section id="submit">
+      <div class="wrap">
+        <div class="eyebrow">Have something to share?</div>
+        <h3 style="font:500 clamp(2rem,4vw,3rem) var(--serif); margin:7px 0 10px;">Submit to The Chronicle</h3>
+        <div class="submission">
+          <p class="form-intro">Complete the form below. The editorial team will review your submission and may contact you before publication. Submitting an article does not guarantee publication.</p>
+          <form action="https://formsubmit.co/REPLACE_WITH_VERIFIED_TOKEN" method="POST">
+            <input type="hidden" name="_subject" value="[CBC The Chronicle] New student submission">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="fields">
+              <div class="field">
+                <label for="category">Submission category *</label>
+                <select id="category" name="Category" required>
+                  <option value="">Choose a section</option>
+                  <option>Campus News</option><option>Student Voices</option><option>Arts &amp; Cultures</option><option>Academics &amp; Ideas</option><option>Opinions &amp; Editorials</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="title">Article / submission title *</label>
+                <input id="title" name="Submission title" required maxlength="180" placeholder="Give your submission a title">
+              </div>
+              <div class="field">
+                <label for="author">Name or preferred byline</label>
+                <input id="author" name="Author / byline" maxlength="100" placeholder="Leave blank to submit anonymously">
+                <div class="hint">You may leave this blank if you prefer an anonymous byline.</div>
+              </div>
+              <div class="field">
+                <label for="email">Email for editorial follow-up (optional)</label>
+                <input id="email" type="email" name="Reply email" placeholder="you@example.com">
+                <div class="hint">Only provide an address if you are comfortable being contacted.</div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="content">Your submission / description *</label>
+              <textarea id="content" name="Submission text" required minlength="20" placeholder="Write your article, share your idea, or briefly describe the news tip here..."></textarea>
+            </div>
+            <div class="field">
+              <label for="source">Original source URL (if applicable)</label>
+              <input id="source" type="url" name="Source URL" placeholder="https://">
+              <div class="hint">Required in practice for external articles, research, or material you did not create.</div>
+            </div>
+            <label class="checkline"><input type="checkbox" name="Submission acknowledgement" value="Confirmed" required><span>I understand that the editorial team will review this submission before publication. I have credited sources and have permission to share any material I did not create.</span></label>
+            <button class="button" type="submit">Send submission →</button>
+          </form>
+          <p class="privacy"><strong>Privacy note:</strong> Submissions are sent to the newspaper's editorial inbox for review. Please do not include sensitive personal information about yourself or anyone else. Contact details, if supplied, are for editorial follow-up only and should not be published without permission. Do not submit private information, allegations about identifiable people, or images of others without appropriate permission.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>© 2026 CBC The Chronicle</span><span>Stories · Perspectives · Ideas</span></div></footer>
+</body>
+</html>
